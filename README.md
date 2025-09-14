@@ -49,7 +49,7 @@ Showcase is built as a microservices architecture with the following components:
 - **Redis** for caching and job storage
 - **Playwright** for browser automation
 - **RunwayML** for AI video generation
-- **Cerebras** for text generation
+- **Cerebras** for text & storyboard generation
 - **Suno** for music generation
 
 ### Frontend
@@ -250,7 +250,7 @@ npm run build
 ## Acknowledgments
 
 - **RunwayML** for AI video generation capabilities
-- **Cerebras** for storyboard generation
+- **Cerebras** for storyboard & text generation
 - **Playwright & Browser Use** for browser automation
 - **Suno** for music generation
 
