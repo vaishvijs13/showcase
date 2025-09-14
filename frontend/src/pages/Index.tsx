@@ -14,6 +14,7 @@ const Index = () => {
   const [appUrl, setAppUrl] = useState("");
   const [role, setRole] = useState("Developer");
   const [purpose, setPurpose] = useState("Learning");
+  const [musicVibe, setMusicVibe] = useState("Upbeat tech");
   const [pipelineState, setPipelineState] = useState<'idle' | 'running' | 'complete' | 'error'>('idle');
   const [currentJobId, setCurrentJobId] = useState<string | null>(null);
   const [finalVideoUrl, setFinalVideoUrl] = useState<string | null>(null);
@@ -214,9 +215,12 @@ const Index = () => {
       {/* Header */}
       <header className="p-6 border-b border-border">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-display text-primary">TakeOne</h1>
+          <div className="flex items-center gap-3">
+            <img src="/logo.svg" alt="showcase logo" className="w-10 h-10" />
+            <h1 className="text-display text-primary">showcase</h1>
+          </div>
           <p className="text-sm text-secondary mt-1">
-            AI-generated, accessible walkthroughs for any app or open-source repo
+            Walkthroughs that teach, demos that stick — for any app or open-source repo.
           </p>
         </div>
       </header>
@@ -227,13 +231,15 @@ const Index = () => {
         <div className="w-80 p-6 space-y-8 border-r border-border">
           <RepoInput value={repoUrl} onChange={setRepoUrl} />
           <AppUrlInput value={appUrl} onChange={setAppUrl} />
-          <PersonaSentence 
-            role={role} 
+          <PersonaSentence
+            role={role}
             purpose={purpose}
+            musicVibe={musicVibe}
             onRoleChange={setRole}
             onPurposeChange={setPurpose}
+            onMusicVibeChange={setMusicVibe}
           />
-          
+
           <div className="pt-4 border-t border-border">
             <Button
               onClick={handleRunPipeline}
@@ -258,7 +264,7 @@ const Index = () => {
 
         {/* Right Panel - Preview */}
         <div className="flex-1 flex flex-col">
-          <PreviewPanel 
+          <PreviewPanel
             state={pipelineState}
             sceneClips={[]} // Will be populated from real scene data later
             finalVideo={finalVideoUrl || undefined}

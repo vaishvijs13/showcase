@@ -1,0 +1,75 @@
+/* Theme System for Showcase */
+
+/* Original Monochrome Theme */
+.theme-original {
+  /* Core monochrome palette */
+  --background: 0 0% 4%;          /* Deep black background */
+  --foreground: 0 0% 98%;         /* Pure white text */
+
+  --surface: 0 0% 8%;             /* Slightly elevated surface */
+  --surface-elevated: 0 0% 12%;   /* More elevated surface */
+
+  --border: 0 0% 20%;             /* Subtle border */
+  --border-strong: 0 0% 35%;      /* Stronger border */
+
+  --text-primary: 0 0% 98%;       /* Primary text */
+  --text-secondary: 0 0% 65%;     /* Secondary text */
+  --text-muted: 0 0% 45%;         /* Muted text */
+
+  /* Interactive states */
+  --interactive: 0 0% 98%;        /* Interactive elements */
+  --interactive-hover: 0 0% 4%;   /* Hover state (invert) */
+
+  /* Status colors */
+  --status-success: 120 100% 40%; /* Success green */
+  --status-error: 0 100% 50%;     /* Error red */
+  --status-warning: 45 100% 50%;  /* Warning amber */
+
+  /* Pipeline states */
+  --pipeline-pending: 0 0% 25%;   /* Pending step */
+  --pipeline-active: 0 0% 98%;    /* Active step */
+  --pipeline-complete: 0 0% 98%;  /* Completed step */
+  --pipeline-error: 0 100% 50%;   /* Error step */
+}
+
+/* New Flowy Colorful Theme */
+.theme-flow {
+  /* Dark base with color accents */
+  --background: 222 84% 5%;       /* Deep dark blue-black */
+  --foreground: 210 40% 98%;      /* Soft white */
+
+  --surface: 222 84% 8%;          /* Elevated dark surface */
+  --surface-elevated: 222 84% 12%; /* More elevated surface */
+
+  --border: 217 32% 17%;          /* Subtle purple-gray border */
+  --border-strong: 217 32% 30%;   /* Stronger border */
+
+  --text-primary: 210 40% 98%;    /* Primary text */
+  --text-secondary: 217 32% 65%;  /* Secondary text */
+  --text-muted: 217 32% 45%;      /* Muted text */
+
+  /* Interactive states with gradients */
+  --interactive: 210 40% 98%;     /* Interactive elements */
+  --interactive-hover: 222 84% 5%; /* Hover state */
+
+  /* Vibrant accent colors */
+  --accent-primary: 266 85% 58%;   /* Purple accent */
+  --accent-secondary: 195 100% 50%; /* Cyan accent */
+  --accent-tertiary: 330 81% 60%;   /* Pink accent */
+
+  /* Status colors */
+  --status-success: 142 76% 36%;   /* Success green */
+  --status-error: 0 84% 60%;       /* Error red */
+  --status-warning: 38 92% 50%;    /* Warning amber */
+
+  /* Pipeline states with color */
+  --pipeline-pending: 217 32% 25%; /* Pending step */
+  --pipeline-active: 266 85% 58%;  /* Active step (purple) */
+  --pipeline-complete: 142 76% 36%; /* Complete step (green) */
+  --pipeline-error: 0 84% 60%;     /* Error step (red) */
+
+  /* Gradient definitions */
+  --gradient-primary: linear-gradient(135deg, hsl(266 85% 58%) 0%, hsl(195 100% 50%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(330 81% 60%) 0%, hsl(266 85% 58%) 100%);
+  --gradient-tertiary: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(142 76% 36%) 100%);
+}

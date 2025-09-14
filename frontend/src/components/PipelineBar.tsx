@@ -27,7 +27,7 @@ export function PipelineBar({ steps, className }: PipelineBarProps) {
       <div className="flex items-center gap-1 flex-1">
         {PIPELINE_STEPS.map((step, index) => {
           const stepStatus = steps.find(s => s.id === step.id)?.status || 'pending';
-          
+
           return (
             <div key={step.id} className="flex items-center gap-1 flex-1">
               <div className={cn(
@@ -41,7 +41,7 @@ export function PipelineBar({ steps, className }: PipelineBarProps) {
                 {stepStatus === 'error' && <X className="h-3 w-3" />}
                 <span>{step.label}</span>
               </div>
-              
+
               {index < PIPELINE_STEPS.length - 1 && (
                 <div className={cn(
                   "h-px flex-1 transition-colors duration-500",
