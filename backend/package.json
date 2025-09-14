@@ -1,0 +1,37 @@
+{
+  "name": "takeone",
+  "version": "1.0.0",
+  "description": "custom videos for demos & tutorials",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:gateway": "turbo run dev --filter=@takeone/gateway",
+    "dev:planner": "turbo run dev --filter=@takeone/planner",
+    "dev:presenter": "turbo run dev --filter=@takeone/presenter",
+    "dev:composer": "turbo run dev --filter=@takeone/composer",
+    "dev:explorer": "turbo run dev --filter=@takeone/explorer",
+    "dev:all": "concurrently \"pnpm dev:gateway\" \"pnpm dev:planner\" \"pnpm dev:presenter\" \"pnpm dev:composer\" \"pnpm dev:explorer\"",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "setup": "pnpm install && pnpm build",
+    "start:prod": "turbo run start"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.16",
+    "typescript": "^5.2.2",
+    "@types/node": "^20.8.0",
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@8.10.0"
+} 

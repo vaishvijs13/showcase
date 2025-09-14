@@ -1,0 +1,28 @@
+{
+  "name": "@takeone/utils",
+  "version": "1.0.0",
+  "description": "Shared utilities for logging, storage, and helpers",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@takeone/types": "workspace:*",
+    "winston": "^3.10.0",
+    "fs-extra": "^11.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/fs-extra": "^11.0.2"
+  }
+} 
