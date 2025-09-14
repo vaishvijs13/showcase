@@ -1,4 +1,4 @@
-# Showcase
+# showcase
 
 **Your project, taught and showcased**
 
