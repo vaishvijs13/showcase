@@ -3,6 +3,7 @@
 **Your project, taught and showcased**
 
 Showcase is an AI-powered platform that automatically generates custom demo videos and tutorials for applications and open-source repositories. Simply provide a repository URL or app URL, and our intelligent pipeline will analyze, explore, script, and create a professional demo video tailored to your audience.
+<img width="2146" height="1208" alt="image" src="https://github.com/user-attachments/assets/dab44ab3-ce3d-4a33-80ba-4a748975c9b6" />
 
 ## Features
 
