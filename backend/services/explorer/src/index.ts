@@ -9,6 +9,7 @@ import { requestLogger } from './middleware/request-logger';
 import { ingestRouter } from './routes/ingest';
 import { crawlRouter } from './routes/crawl';
 import { recordRouter } from './routes/record';
+import { browserAgentRouter } from './routes/browser-agent';
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -49,6 +50,7 @@ app.get('/health', (req, res) => {
 app.use('/ingest', ingestRouter);
 app.use('/crawl', crawlRouter);
 app.use('/record', recordRouter);
+app.use('/browser-agent', browserAgentRouter);
 
 // Error handling
 app.use(errorHandler);
