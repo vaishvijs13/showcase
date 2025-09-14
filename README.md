@@ -74,46 +74,6 @@ Showcase is built as a microservices architecture with the following components:
 - Python 3.8+ (for browser agent)
 - Redis (for job queues)
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd showcase
-   ```
-
-2. **Install dependencies**
-   ```bash
-   # Install backend dependencies
-   cd backend
-   pnpm install
-   
-   # Install frontend dependencies
-   cd ../frontend
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   # Backend services
-   cp backend/.env.example backend/.env
-   # Edit backend/.env with your API keys
-   
-   # Browser agent
-   cp backend/services/browser-agent/.env.example backend/services/browser-agent/.env
-   # Edit with your OpenAI API key
-   ```
-
-4. **Start Redis** (required for job queues)
-   ```bash
-   # Using Docker
-   docker run -d -p 6379:6379 redis:alpine
-   
-   # Or using your system package manager
-   # macOS: brew install redis && brew services start redis
-   # Ubuntu: sudo apt install redis-server && sudo systemctl start redis
-   ```
-
 ### Development
 
 1. **Start all services**
@@ -135,28 +95,7 @@ Showcase is built as a microservices architecture with the following components:
    python main.py
    ```
 
-### Individual Services
-
-You can also run services individually:
-
-```bash
-# Gateway service
-pnpm dev:gateway
-
-# Explorer service
-pnpm dev:explorer
-
-# Planner service
-pnpm dev:planner
-
-# Presenter service
-pnpm dev:presenter
-
-# Composer service
-pnpm dev:composer
-```
-
-## 📖 Usage
+## Usage
 
 1. **Open the application** at `http://localhost:5173`
 
@@ -175,34 +114,8 @@ pnpm dev:composer
    - Once complete, the final MP4 video loads in the preview
    - Share with your team or audience
 
-## 🔧 Configuration
+Video Demo: https://www.youtube.com/watch?v=SoQctxmM9N4
 
-### Environment Variables
-
-#### Backend Services
-```env
-# Redis Configuration
-REDIS_URL=redis://localhost:6379
-
-# API Keys
-OPENAI_API_KEY=your_openai_key
-RUNWAY_API_KEY=your_runway_key
-CEREBRAS_API_KEY=your_cerebras_key
-SUNO_API_KEY=your_suno_key (thank you to Suno for providing us with exclusive API access)
-
-# Service Ports
-GATEWAY_PORT=3000
-EXPLORER_PORT=3001
-PLANNER_PORT=3002
-PRESENTER_PORT=3003
-COMPOSER_PORT=3004
-```
-
-#### Browser Agent
-```env
-OPENAI_API_KEY=your_openai_key
-PORT=3005
-```
 
 ### Customization
 
@@ -218,35 +131,6 @@ PORT=3005
 4. **Audio** - Create AI-generated narration with chosen voice
 5. **Video** - Record screen interactions and app usage
 6. **Compose** - Combine audio, video, and effects into final demo
-
-## Testing
-
-```bash
-# Run all tests
-cd backend
-pnpm test
-
-# Run tests for specific service
-pnpm test --filter=@takeone/gateway
-
-# Frontend tests
-cd frontend
-npm test
-```
-
-## Deployment
-
-### Production Build
-
-```bash
-# Build all services
-cd backend
-pnpm build
-
-# Build frontend
-cd frontend
-npm run build
-```
 
 ## Acknowledgments
 
