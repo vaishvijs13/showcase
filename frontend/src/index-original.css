@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TakeOne Design System - Monochrome minimal aesthetic inspired by oxide.computer */
+
+@layer base {
+  :root {
+    /* Core monochrome palette */
+    --background: 0 0% 4%;          /* Deep black background */
+    --foreground: 0 0% 98%;         /* Pure white text */
+    
+    --surface: 0 0% 8%;             /* Slightly elevated surface */
+    --surface-elevated: 0 0% 12%;   /* More elevated surface */
+    
+    --border: 0 0% 20%;             /* Subtle border */
+    --border-strong: 0 0% 35%;      /* Stronger border */
+    
+    --text-primary: 0 0% 98%;       /* Primary text */
+    --text-secondary: 0 0% 65%;     /* Secondary text */
+    --text-muted: 0 0% 45%;         /* Muted text */
+    
+    /* Interactive states */
+    --interactive: 0 0% 98%;        /* Interactive elements */
+    --interactive-hover: 0 0% 4%;   /* Hover state (invert) */
+    
+    /* Status colors */
+    --status-success: 120 100% 40%; /* Success green */
+    --status-error: 0 100% 50%;     /* Error red */
+    --status-warning: 45 100% 50%;  /* Warning amber */
+    
+    /* Pipeline states */
+    --pipeline-pending: 0 0% 25%;   /* Pending step */
+    --pipeline-active: 0 0% 98%;    /* Active step */
+    --pipeline-complete: 0 0% 98%;  /* Completed step */
+    --pipeline-error: 0 100% 50%;   /* Error step */
+    
+    /* Geometric patterns */
+    --pattern-opacity: 0.03;        /* Subtle pattern overlay */
+    
+    --radius: 0.25rem;              /* Minimal border radius */
+    
+    /* Shadows */
+    --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  
+  /* Typography hierarchy */
+  .text-display {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  
+  .text-heading {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  
+  .text-subheading {
+    @apply text-lg font-medium;
+  }
+  
+  .text-body {
+    @apply text-sm font-normal;
+  }
+  
+  .text-caption {
+    @apply text-xs font-medium tracking-wide uppercase;
+  }
+  
+  .text-mono {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer components {
+  /* Geometric background pattern */
+  .geometric-pattern {
+    background-image: 
+      linear-gradient(45deg, transparent 25%, rgba(255,255,255,var(--pattern-opacity)) 25%, rgba(255,255,255,var(--pattern-opacity)) 50%, transparent 50%, transparent 75%, rgba(255,255,255,var(--pattern-opacity)) 75%);
+    background-size: 60px 60px;
+    animation: pattern-drift 60s linear infinite;
+  }
+  
+  @keyframes pattern-drift {
+    0% { background-position: 0 0; }
+    100% { background-position: 60px 60px; }
+  }
+  
+  /* Loading animations */
+  .pulse-dot {
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-dot {
+    0%, 80%, 100% { opacity: 0.3; }
+    40% { opacity: 1; }
+  }
+  
+  .loading-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loading-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--foreground)), transparent);
+    animation: loading-sweep 2s ease-in-out infinite;
+  }
+  
+  @keyframes loading-sweep {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  /* Interactive button effects */
+  .btn-invert {
+    @apply border border-foreground bg-transparent text-foreground transition-all duration-200 ease-out;
+    @apply hover:bg-foreground hover:text-background;
+    @apply disabled:text-foreground disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-secondary border border-border transition-all duration-200;
+    @apply hover:border-foreground hover:text-primary;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

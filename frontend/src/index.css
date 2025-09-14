@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TakeOne Design System - Monochrome minimal aesthetic inspired by oxide.computer */
+
+@layer base {
+  :root {
+    /* Dark gradient theme with glassmorphism */
+    --background: 0 0% 0%;          /* Pure black background */
+    --foreground: 0 0% 98%;         /* Pure white text */
+    
+    /* Glass surfaces with transparency */
+    --surface: 0 0% 8% / 0.8;       /* Semi-transparent elevated surface */
+    --surface-elevated: 0 0% 12% / 0.9; /* More elevated glass surface */
+    --glass-card: 0 0% 6% / 0.6;    /* Glass card background */
+    --glass-border: 0 0% 100% / 0.1; /* Glass border */
+    
+    /* Gradient colors */
+    --gradient-primary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); /* Teal to blue */
+    --gradient-secondary: linear-gradient(135deg, #ec4899 0%, #f97316 100%); /* Pink to orange */
+    --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%); /* Purple to teal */
+    --gradient-background: linear-gradient(135deg, #0f0f23 0%, #1a0b2e 50%, #2d1b69 100%); /* Blue to purple to pink */
+    
+    /* Text colors with high contrast */
+    --text-primary: 0 0% 98%;       /* Primary text */
+    --text-secondary: 0 0% 75%;     /* Secondary text */
+    --text-muted: 0 0% 55%;         /* Muted text */
+    --text-disabled: 0 0% 40%;      /* Disabled text */
+    
+    /* Interactive states */
+    --interactive: 0 0% 98%;        /* Interactive elements */
+    --interactive-hover: 0 0% 4%;   /* Hover state (invert) */
+    
+    /* Status colors */
+    --status-success: 142 76% 36%;  /* Success green */
+    --status-error: 0 84% 60%;      /* Error red */
+    --status-warning: 38 92% 50%;   /* Warning amber */
+    
+    /* Pipeline states with gradients */
+    --pipeline-pending: 0 0% 25%;   /* Pending step */
+    --pipeline-active: 195 100% 50%; /* Active step (cyan) */
+    --pipeline-complete: 142 76% 36%; /* Completed step (green) */
+    --pipeline-error: 0 84% 60%;    /* Error step (red) */
+    
+    /* Glass effects */
+    --glass-blur: blur(12px);       /* Glass blur effect */
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Glass shadow */
+    
+    --radius: 0.75rem;              /* Rounded corners for modern look */
+    
+    /* Enhanced shadows */
+    --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  body {
+    @apply text-foreground antialiased;
+    background: var(--gradient-background);
+    background-attachment: fixed;
+    color: hsl(var(--foreground));
+    min-height: 100vh;
+  }
+  
+  /* Typography hierarchy */
+  .text-display {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  
+  .text-heading {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  
+  .text-subheading {
+    @apply text-lg font-medium;
+  }
+  
+  .text-body {
+    @apply text-sm font-normal;
+  }
+  
+  .text-caption {
+    @apply text-xs font-medium tracking-wide uppercase;
+  }
+  
+  .text-mono {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer components {
+  /* Glassmorphism components */
+  .glass-card {
+    background: hsl(var(--glass-card));
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .glass-surface {
+    background: hsl(var(--surface));
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  
+  .glass-elevated {
+    background: hsl(var(--surface-elevated));
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+  
+  /* Gradient text effects */
+  .gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gradient buttons */
+  .btn-gradient-primary {
+    background: var(--gradient-primary);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+  }
+  
+  .btn-gradient-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+  }
+  
+  .btn-gradient-secondary {
+    background: var(--gradient-secondary);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+  }
+  
+  .btn-gradient-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+  }
+  
+  .btn-gradient-disabled {
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+    border: none;
+    color: hsl(var(--text-disabled));
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Pipeline gradient fills */
+  .pipeline-gradient-fill {
+    background: var(--gradient-primary);
+    animation: gradient-fill 0.8s ease-out;
+  }
+  
+  @keyframes gradient-fill {
+    0% { background-size: 0% 100%; }
+    100% { background-size: 100% 100%; }
+  }
+  
+  /* Mouse spotlight with gradient */
+  .spotlight-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .spotlight {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out;
+    will-change: transform;
+  }
+  
+  /* Loading animations */
+  .pulse-dot {
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-dot {
+    0%, 80%, 100% { opacity: 0.3; }
+    40% { opacity: 1; }
+  }
+  
+  .loading-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loading-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    animation: loading-sweep 2s ease-in-out infinite;
+  }
+  
+  @keyframes loading-sweep {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  /* Interactive button effects */
+  .btn-invert {
+    @apply border border-foreground bg-transparent text-foreground transition-all duration-200 ease-out;
+    @apply hover:bg-foreground hover:text-background;
+    @apply disabled:text-foreground disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-secondary border border-border transition-all duration-200;
+    @apply hover:border-foreground hover:text-primary;
+  }
+  
+  /* Glass input styling */
+  .glass-input {
+    background: hsl(var(--glass-card));
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid hsl(var(--glass-border));
+    transition: all 0.3s ease;
+  }
+  
+  .glass-input:focus {
+    border-color: hsl(195 100% 50%);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
