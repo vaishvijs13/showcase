@@ -21,11 +21,11 @@ Showcase is built as a microservices architecture with the following components:
 
 ### Backend Services
 
-- **Gateway** (`@takeone/gateway`): Main API gateway and job orchestration service
-- **Explorer** (`@takeone/explorer`): Repository ingestion, live crawling, and recording
-- **Planner** (`@takeone/planner`): Storyboard generation with Cerebras integration
-- **Presenter** (`@takeone/presenter`): Video generation using RunwayML
-- **Composer** (`@takeone/composer`): Final video music composition and video editing
+- **Gateway** (`@showcase/gateway`): Main API gateway and job orchestration service
+- **Explorer** (`@showcase/explorer`): Repository ingestion, live crawling, and recording
+- **Planner** (`@showcase/planner`): Storyboard generation with Cerebras integration
+- **Presenter** (`@showcase/presenter`): Video generation using RunwayML
+- **Composer** (`@showcase/composer`): Final video music composition and video editing
 - **Browser Agent** (`browser-agent`): Python service for web app exploration using browser automation
 
 ### Frontend
@@ -36,8 +36,8 @@ Showcase is built as a microservices architecture with the following components:
 
 ### Shared Packages
 
-- **Types** (`@takeone/types`): Shared TypeScript type definitions
-- **Utils** (`@takeone/utils`): Common utilities and helpers
+- **Types** (`@showcase/types`): Shared TypeScript type definitions
+- **Utils** (`@showcase/utils`): Common utilities and helpers
 
 ## Tech Stack
 
